@@ -143,4 +143,4 @@ request descriptions.
 - *Scaling Test-Time Compute for Agentic Coding* (COLM 2026, [arXiv:2604.16529](https://arxiv.org/abs/2604.16529)):
   finished rollouts are compressed into structured summaries before they are reused.
 
-MIT License. See [LICENSE](LICENSE).
+MIT License. See [LICENSE](LICENSE). Community: [LINUX DO](https://linux.do).

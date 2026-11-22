@@ -138,4 +138,4 @@ project-docs 不维护按编号、按时间排列的决策日志。需要这种�
 - *Scaling Test-Time Compute for Agentic Coding*（COLM 2026，[arXiv:2604.16529](https://arxiv.org/abs/2604.16529)）：
   把完成的 rollout 压缩成结构化摘要后再复用。
 
-MIT 许可证，见 [LICENSE](LICENSE)。
+MIT 许可证，见 [LICENSE](LICENSE)。社区交流：[LINUX DO](https://linux.do)。
