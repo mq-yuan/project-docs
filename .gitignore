@@ -1,0 +1,19 @@
+# Python / uv
+# Negate common global gitignore patterns (*.lock, AGENTS.md) required by this repo
+!uv.lock
+!**/AGENTS.md
+.envrc
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.coverage
+
+# OS / Editor
+.DS_Store
+.idea/
+.vscode/

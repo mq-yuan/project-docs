@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
+        include:
+          - os: macos-latest
+            python-version: "3.12"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Install Python ${{ matrix.python-version }}
+        run: uv python install ${{ matrix.python-version }}
+      - name: Check formatting
+        run: uv run --python ${{ matrix.python-version }} ruff format --check
+      - name: Lint code
+        run: uv run --python ${{ matrix.python-version }} ruff check
+      - name: Run test suite
+        run: uv run --python ${{ matrix.python-version }} pytest
+      - name: Dogfood repository documentation check
+        run: uv run --python ${{ matrix.python-version }} project-docs check
+      - name: Check example documentation layout
+        run: uv run --python ${{ matrix.python-version }} project-docs check examples/3d-recon-docs

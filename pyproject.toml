@@ -1,0 +1,73 @@
+[build-system]
+requires = ["hatchling>=1.24.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "project-docs"
+version = "0.1.0"
+description = "Project-level memory for coding agents: keep a project's facts as repository docs that evolve with the code and are rewritten in place, plus a zero-dependency linter."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [
+    { name = "mq-yuan", email = "82648854+mq-yuan@users.noreply.github.com" },
+]
+keywords = [
+    "ai-agents",
+    "context-engineering",
+    "agent-skills",
+    "documentation",
+    "claude-code",
+    "codex",
+    "linter",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Documentation",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/mq-yuan/project-docs"
+Repository = "https://github.com/mq-yuan/project-docs"
+Issues = "https://github.com/mq-yuan/project-docs/issues"
+
+[project.scripts]
+project-docs = "project_docs.cli:main"
+pdocs = "project_docs.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.0",
+    "ruff>=0.8.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/project_docs"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    ".envrc",
+    ".python-version",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
