@@ -45,13 +45,13 @@ cp -R project-docs/skills/project-docs ~/.agents/skills/
 cp -R project-docs/skills/project-docs ~/.claude/skills/
 ```
 
-命令行工具需要 Python 3.11+，没有运行时依赖。它目前未发布到 PyPI：请用
-`git+https://github.com/mq-yuan/project-docs` 安装或运行，切勿不带 `--from` 裸跑 `uvx project-docs`
-或 `uvx pdocs`（那会拉到 PyPI 上无关的同名包）。
+命令行工具需要 Python 3.11+，没有运行时依赖。它目前未发布到 PyPI：请从 GitHub 安装或运行，
+并固定到发布 tag；切勿不带 `--from` 裸跑 `uvx project-docs` 或 `uvx pdocs`（要么失败，要么拉到
+PyPI 上无关的同名包）。
 
 ```bash
-uvx --from git+https://github.com/mq-yuan/project-docs project-docs check
-uv tool install git+https://github.com/mq-yuan/project-docs   # 提供 project-docs 与 pdocs
+uvx --from git+https://github.com/mq-yuan/project-docs@v0.1.0 project-docs check
+uv tool install git+https://github.com/mq-yuan/project-docs@v0.1.0   # 提供 project-docs 与 pdocs
 ```
 
 ## 用法

@@ -48,12 +48,12 @@ cp -R project-docs/skills/project-docs ~/.claude/skills/
 ```
 
 The CLI needs Python 3.11+ and has no runtime dependencies. It is not published on PyPI: install or
-run it from `git+https://github.com/mq-yuan/project-docs`, and never run a bare `uvx project-docs`
-or `uvx pdocs` without `--from` (that fetches an unrelated PyPI package).
+run it from GitHub pinned to a release tag, and never run a bare `uvx project-docs` or `uvx pdocs`
+without `--from` (that either fails or fetches an unrelated PyPI package).
 
 ```bash
-uvx --from git+https://github.com/mq-yuan/project-docs project-docs check
-uv tool install git+https://github.com/mq-yuan/project-docs   # adds project-docs and pdocs
+uvx --from git+https://github.com/mq-yuan/project-docs@v0.1.0 project-docs check
+uv tool install git+https://github.com/mq-yuan/project-docs@v0.1.0   # adds project-docs and pdocs
 ```
 
 ## Usage
