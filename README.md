@@ -42,14 +42,13 @@ How the document types relate:
 flowchart LR
   subgraph read["Read at the start of every session"]
     E["AGENTS.md"] --> I["docs/index.md<br/>one line per finding"]
-    I --> S["Status<br/>active work, as-of date"]
-    I --> C["Contracts · Guides<br/>what must hold, how to use it"]
-    I --> F["Findings<br/>one topic, with evidence"]
+    I --> S["Status<br/>active work only"]
+    I --> C["Contracts, Guides<br/>current rules"]
+    I --> F["Findings<br/>topic + evidence"]
   end
-  R["Records<br/>one experiment or task"] -->|"converged conclusions"| F
-  F -->|"a rule for how things must be done"| C
-  S -->|"finished work"| R
-  A["Archive<br/>frozen, opened only on request"]
+  R["Records<br/>one experiment or task"] -->|"conclusions converge"| F
+  F -->|"becomes a rule"| C
+  A["Archive<br/>frozen, read on request"]
 ```
 
 ## Install

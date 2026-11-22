@@ -40,14 +40,13 @@ Update (2026-11-12)：0.85 在街景上卡顿，改用 0.70。
 flowchart LR
   subgraph read["每次会话开始时读取"]
     E["AGENTS.md"] --> I["docs/index.md<br/>每条发现一行"]
-    I --> S["Status<br/>进行中的工作、截至日期"]
-    I --> C["Contracts · Guides<br/>必须成立的约束、用法"]
+    I --> S["Status<br/>只放进行中的工作"]
+    I --> C["Contracts、Guides<br/>当前的规则与用法"]
     I --> F["Findings<br/>一个主题，附证据"]
   end
-  R["Records<br/>一次实验或任务"] -->|"收敛后的结论"| F
-  F -->|"规定了必须怎么做"| C
-  S -->|"完成的工作"| R
-  A["Archive<br/>冻结，仅在要求时打开"]
+  R["Records<br/>一次实验或任务"] -->|"结论收敛"| F
+  F -->|"晋升为规则"| C
+  A["Archive<br/>冻结，仅按需阅读"]
 ```
 
 ## 安装
