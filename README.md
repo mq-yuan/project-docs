@@ -36,6 +36,22 @@ Update (2026-11-12): 0.85 stalls on street scenes, use 0.70.
 Hash table occupancy stays at or below 0.70 ([load factor](findings/voxel-hashing.md)).
 ```
 
+How the document types relate:
+
+```mermaid
+flowchart LR
+  subgraph read["Read at the start of every session"]
+    E["AGENTS.md"] --> I["docs/index.md<br/>one line per finding"]
+    I --> S["Status<br/>active work, as-of date"]
+    I --> C["Contracts · Guides<br/>what must hold, how to use it"]
+    I --> F["Findings<br/>one topic, with evidence"]
+  end
+  R["Records<br/>one experiment or task"] -->|"converged conclusions"| F
+  F -->|"a rule for how things must be done"| C
+  S -->|"finished work"| R
+  A["Archive<br/>frozen, opened only on request"]
+```
+
 ## Install
 
 The skill installs with `npx skills add mq-yuan/project-docs -g`, or by copying it by hand:
