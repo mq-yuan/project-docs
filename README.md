@@ -67,8 +67,8 @@ run it from GitHub pinned to a release tag, and never run a bare `uvx project-do
 without `--from` (that either fails or fetches an unrelated PyPI package).
 
 ```bash
-uvx --from git+https://github.com/mq-yuan/project-docs@v0.1.0 project-docs check
-uv tool install git+https://github.com/mq-yuan/project-docs@v0.1.0   # adds project-docs and pdocs
+uvx --from git+https://github.com/mq-yuan/project-docs@v0.1.1 project-docs check
+uv tool install git+https://github.com/mq-yuan/project-docs@v0.1.1   # adds project-docs and pdocs
 ```
 
 ## Usage

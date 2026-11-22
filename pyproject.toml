@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "project-docs"
-version = "0.1.0"
+version = "0.1.1"
 description = "Project-level memory for coding agents: keep a project's facts as repository docs that evolve with the code and are rewritten in place, plus a zero-dependency linter."
 readme = "README.md"
 license = "MIT"

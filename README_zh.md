@@ -65,8 +65,8 @@ cp -R project-docs/skills/project-docs ~/.claude/skills/
 PyPI 上无关的同名包）。
 
 ```bash
-uvx --from git+https://github.com/mq-yuan/project-docs@v0.1.0 project-docs check
-uv tool install git+https://github.com/mq-yuan/project-docs@v0.1.0   # 提供 project-docs 与 pdocs
+uvx --from git+https://github.com/mq-yuan/project-docs@v0.1.1 project-docs check
+uv tool install git+https://github.com/mq-yuan/project-docs@v0.1.1   # 提供 project-docs 与 pdocs
 ```
 
 ## 用法

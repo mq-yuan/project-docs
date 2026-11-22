@@ -9,6 +9,6 @@ try:
     __version__ = version("project-docs")
 except PackageNotFoundError:
     # Running from an uninstalled source tree.
-    __version__ = "0.1.0"
+    __version__ = "0.1.1"
 
 __all__ = ["ConfigError", "Diagnostic", "DocType", "RuleCode", "__version__", "check_project"]
