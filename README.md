@@ -116,6 +116,22 @@ reports problems in the edited file only, exiting with code 2 so Claude Code pas
 agent. The root is the directory where the Claude Code session was started (`$CLAUDE_PROJECT_DIR`);
 put the configuration there. The hook needs `project-docs` on `PATH` (`uv tool install`).
 
+## Relation to ADRs
+
+An architecture decision record (ADR) keeps one immutable file per decision. project-docs splits
+what an ADR holds by lifetime, so the default reading path carries only what is true today:
+
+| ADR content | In project-docs |
+| --- | --- |
+| The decision | Contract, rewritten when the design changes, with a one-line reason |
+| Evidence for choosing A over B | Records and the topic Finding they support |
+| Proposed or in-progress work | Status and the active Record |
+| Superseded decisions | Archive when the history should be kept; otherwise git |
+
+project-docs keeps no numbered, chronological decision log. A team that needs one can keep ADRs as
+frozen decision records alongside these docs, and put finer background in commit messages or pull
+request descriptions.
+
 ## Background & Further Reading
 
 - *Can Agent Memory Systems Track Evolving State?* (StateMemBench, [arXiv:2608.19652](https://arxiv.org/abs/2608.19652)):

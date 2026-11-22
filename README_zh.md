@@ -112,6 +112,21 @@ hook 只在有配置文件的仓库中生效（`project-docs init` 会生成）�
 问题，以退出码 2 结束，让 Claude Code 把问题反馈给 Agent。根目录是启动 Claude Code 会话的目录
 （`$CLAUDE_PROJECT_DIR`），配置放在那里。hook 需要 `project-docs` 在 `PATH` 上（`uv tool install`）。
 
+## 与 ADR 的关系
+
+架构决策记录（ADR）为每个决策保留一份不可修改的文件。project-docs 按生命周期拆分 ADR 里的内容，
+让默认阅读路径上只有今天仍然成立的事实：
+
+| ADR 中的内容 | 在 project-docs 中 |
+| --- | --- |
+| 决策本身 | Contract，设计变化时重写，附一句理由 |
+| 选 A 不选 B 的证据 | 各条 Record，以及它们支撑的主题 Finding |
+| 提议中或进行中的工作 | Status 和进行中的 Record |
+| 被取代的决策 | 需要保留历史时放进 Archive，否则交给 git |
+
+project-docs 不维护按编号、按时间排列的决策日志。需要这种日志的团队，可以把 ADR 当作已冻结的
+决策记录与这些文档并存，更细的背景写在 commit message 或 PR 描述里。
+
 ## 背景与延伸阅读
 
 - *Can Agent Memory Systems Track Evolving State?*（StateMemBench，[arXiv:2608.19652](https://arxiv.org/abs/2608.19652)）：
